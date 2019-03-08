@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<BSSignalRegistry xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>http</Name>
+  <Latency>0</Latency>
+  <Signals>
+    <BSSignal>
+      <Name>0. ----------Basic AT-------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Ensure in AT command mode，return AT</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Transmit mode to Wi-Fi AT command mode</Name>
+      <DataFormat>String</DataFormat>
+      <Data>+++</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>AT command mode toTransmit mode </Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSENDRAW\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>AT command mode to BT AT Command mode </Name>
+      <DataFormat>String</DataFormat>
+      <Data>A+BTSENDRAW\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Reset</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+REBOOT\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>close uart echo</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+UARTE=OFF\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>se factory cofiguration</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+FACTORY\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data>AT+FWVER?\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>1. ---------Star Soft_AP mode-----------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Set AP name: jerry，code:12345678</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+WSAP=jenny,12345678\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>2.------------Start STATION mode--------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Set name and code of Wi-Fi station</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+WJAP=Xiaomi.Router,stm32f215,\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>3.-----------as TCP Server---------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>creat a tcp server</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSTART=0,tcp_server,8080\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>get  ip of module  in station mode</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+WJAPIP?\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>in at command，sen date to tcp client, whose socket id is 0, and remote port is 8080</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSEND=0,52165,5\r12345</Data>
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>4.------------as TCP client---------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> in STATION mode，start a tcp client,and remote port is 20001</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSTART=1,tcp_client,192.168.1.101,20001\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>in at command，sen date to tcp server, whose socket id is 1, and remote port is 20001</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSEND=1,5\r12345</Data>
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>5.------------UDP broadcast---------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> in STATION mode， send UDP broadcast date, remote port is 20002，local port is 4002</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSTART=2,udp_broadcast,192.168.8.255,20002,4002\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>in at command，sen date to UDP broadcast, whose socket id is 2, and no port number</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSEND=2,5\r12345</Data>
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>6. -----------UDP unicast--------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> in STATION mode， send UDP unicast date, remote port is 20003，local port is 4003</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSTART=3,udp_unicast,192.168.8.106,20003,4003\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>in at command，sen date to UDP unicast, whose socket id is 3</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSEND=3,5\r</Data>
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data>12345</Data>
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>disconnect the id=3 socket</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CIPSTOP=1\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>7. -------- Easylink- net configuration---------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>start Easylink- net configuration</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SMARTSTART=1\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>stop Easylink- net configuration</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SMARTSTOP=1\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>8. --------start Airkiss net configuration------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>set airkiss prameters</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SMARTCFG=gh_420af5d2de71_9b6ee2f805e286e2,gh_420af5d2de71\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>start  airkiss-net configuration</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SMARTSTART=2\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>stop  airkiss-net configuration</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SMARTSTOP=2\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>9. ------SNTP time---------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>set SNTP time area</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SNTPCFG=+8,cn.ntp.org.cn,pool.ntp.org\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>get SNTP time   must link internet</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SNTPTIME\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>10. -------RTC time-----------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------Command----------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Get RTC time</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+RTCGET\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Reset</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+REBOOT\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>11.-------start BT function---------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------指令-------------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> Query or Set BT device name </Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTNAME=?\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>Query or Set BT device key</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTPASSKEY=?\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> Query  BT device mac address</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTMAC=?\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> start the mode to wait connect</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTDISCOVERY=ON\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>open the bt listen function</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTEVENT=ON\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>set the lenght of data will be sent</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTSEND=10\r</Data>
+      <Latency>100</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>data</Name>
+      <DataFormat>String</DataFormat>
+      <Data>1234567890</Data>
+      <Latency>200</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>go to  the BT  transprent transmit mode</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BTSENDRAW\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+  </Signals>
+</BSSignalRegistry>
